@@ -36,4 +36,53 @@ public class OrderInfo {
     @OneToMany(mappedBy = "groceryId")
     private List<GroceryItem> groceryItems;
 
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((orderId == null) ? 0 : orderId.hashCode());
+        result = prime * result + ((scheduledTime == null) ? 0 : scheduledTime.hashCode());
+        result = prime * result + ((customer == null) ? 0 : customer.hashCode());
+        result = prime * result + ((groceryItems == null) ? 0 : groceryItems.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OrderInfo other = (OrderInfo) obj;
+        if (orderId == null) {
+            if (other.orderId != null)
+                return false;
+        } else if (!orderId.equals(other.orderId))
+            return false;
+        if (scheduledTime == null) {
+            if (other.scheduledTime != null)
+                return false;
+        } else if (!scheduledTime.equals(other.scheduledTime))
+            return false;
+        if (customer == null) {
+            if (other.customer != null)
+                return false;
+        } else if (!customer.equals(other.customer))
+            return false;
+        if (groceryItems == null) {
+            if (other.groceryItems != null)
+                return false;
+        } else if (!groceryItems.equals(other.groceryItems))
+            return false;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderInfo [orderId=" + orderId + ", scheduledTime=" + scheduledTime + ", customer=" + customer
+                + ", groceryItems=" + groceryItems + "]";
+    }
+
 }

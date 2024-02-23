@@ -35,6 +35,17 @@ public class GroceryItem {
     @Column(name = "name")
     private String name;
 
+    public GroceryItem() {
+    }
+
+    public GroceryItem(Long groceryId, String description, int quantity, OrderInfo order, String name) {
+        this.groceryId = groceryId;
+        this.description = description;
+        this.quantity = quantity;
+        this.order = order;
+        this.name = name;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

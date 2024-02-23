@@ -36,6 +36,16 @@ public class OrderInfo {
     @OneToMany(mappedBy = "groceryId")
     private List<GroceryItem> groceryItems;
 
+    public OrderInfo() {
+    }
+
+    public OrderInfo(Long orderId, LocalDateTime scheduledTime, Customer customer, List<GroceryItem> groceryItems) {
+        this.orderId = orderId;
+        this.scheduledTime = scheduledTime;
+        this.customer = customer;
+        this.groceryItems = groceryItems;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

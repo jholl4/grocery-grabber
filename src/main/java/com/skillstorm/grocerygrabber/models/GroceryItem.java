@@ -18,7 +18,7 @@ import lombok.Setter;
 public class GroceryItem {
 
     @Id
-    @Column(name = "item_id")
+    @Column(name = "grocery_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long groceryId;
 
@@ -36,6 +36,7 @@ public class GroceryItem {
     private String name;
 
     public GroceryItem() {
+        super();
     }
 
     public GroceryItem(Long groceryId, String description, int quantity, OrderInfo order, String name) {

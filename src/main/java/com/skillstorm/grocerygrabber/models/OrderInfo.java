@@ -26,7 +26,7 @@ public class OrderInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderId;
 
-    @Column(name = "scheduledTime")
+    @Column(name = "scheduled_time")
     private LocalDateTime scheduledTime;
 
     @ManyToOne
@@ -37,6 +37,7 @@ public class OrderInfo {
     private List<GroceryItem> groceryItems;
 
     public OrderInfo() {
+        super();
     }
 
     public OrderInfo(Long orderId, LocalDateTime scheduledTime, Customer customer, List<GroceryItem> groceryItems) {

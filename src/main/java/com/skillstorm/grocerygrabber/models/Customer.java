@@ -33,6 +33,7 @@ public class Customer {
     private List<OrderInfo> orders;
 
     public Customer() {
+        super();
     }
 
     public Customer(Long customerId, String name, String address, List<OrderInfo> orders) {

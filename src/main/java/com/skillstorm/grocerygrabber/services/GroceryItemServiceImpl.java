@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.skillstorm.grocerygrabber.models.GroceryItem;
 import com.skillstorm.grocerygrabber.repositories.GroceryItemRepository;
 
 @Service
+@Transactional
 public class GroceryItemServiceImpl implements GroceryItemService {
 
     @Autowired
